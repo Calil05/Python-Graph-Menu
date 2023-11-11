@@ -1,6 +1,7 @@
 from grafoPreDeterminado import grafo_pre_determinado
 from grafoPersonalizado import grafo_personalizado
 from buscaLagura import busca_por_largura
+from buscaProfundidade import busca_por_profundidade
 from exibeGrafo import exibir_grafo
 import os
 from time import sleep
@@ -80,7 +81,10 @@ while True:
         os.system('cls') or ('clear') or None
         break
 
-if (tipoAlgoritimo == 3):
+if (tipoAlgoritimo == 1):
+    busca_por_profundidade(grafo, verticesGrafo)
+    
+elif (tipoAlgoritimo == 3):
     caminho_menor = busca_por_largura(grafo, verticesGrafo)
     if caminho_menor:
         exibir_grafo(grafo)
