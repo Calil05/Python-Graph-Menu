@@ -4,6 +4,7 @@ def exibir_grafo(grafo):
         print(f"{vertice}: {', '.join(vizinho)}")
 
 def exibir_grafo_com_pesos(grafo):
+    print("Seu Grafo com Pesos:")
     for vertice, vizinhos in grafo.items():
         print(f"{vertice}:", end=' ')
         for vizinho, peso in vizinhos:
