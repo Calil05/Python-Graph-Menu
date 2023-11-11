@@ -1,8 +1,10 @@
 from grafoPreDeterminado import grafo_pre_determinado
 from grafoPersonalizado import grafo_personalizado
+from exibeGrafo import exibir_grafo
+from adicionaPeso import adicionar_pesos_aleatorios
 from buscaLagura import busca_por_largura
 from buscaProfundidade import busca_por_profundidade
-from exibeGrafo import exibir_grafo
+from arvoreGeradoraMinima import arvore_geradora_minima
 import os
 from time import sleep
 
@@ -83,7 +85,7 @@ while True:
 
 if (tipoAlgoritimo == 1):
     busca_por_profundidade(grafo, verticesGrafo)
-    
+
 elif (tipoAlgoritimo == 3):
     caminho_menor = busca_por_largura(grafo, verticesGrafo)
     if caminho_menor:
@@ -93,3 +95,9 @@ elif (tipoAlgoritimo == 3):
         print(" ")
     else:
         print("Não há caminho entre os vértices.")
+
+elif (tipoAlgoritimo == 4):
+    adicionar_pesos_aleatorios(grafo)
+
+    prim = arvore_geradora_minima(grafo, verticesGrafo)
+    print("Árvore Geradora Mínima (Prim):", prim)
