@@ -5,6 +5,7 @@ from adicionaPeso import adicionar_pesos_aleatorios
 from buscaLagura import busca_por_largura
 from buscaProfundidade import busca_por_profundidade
 from arvoreGeradoraMinima import arvore_geradora_minima
+from hamiltoniano import grafo_hamiltoniano
 import os
 from time import sleep
 
@@ -85,6 +86,16 @@ while True:
 
 if (tipoAlgoritimo == 1):
     busca_por_profundidade(grafo, verticesGrafo)
+
+elif (tipoAlgoritimo == 2):
+    caminho_hamiltoniano = grafo_hamiltoniano(grafo, verticesGrafo)
+    if caminho_hamiltoniano:
+        exibir_grafo(grafo)
+        print(" ")
+        print("Caminho Hamiltoniano:", caminho_hamiltoniano)
+        print(" ")
+    else:
+        print("Nenhum caminho Hamiltoniano encontrado.")
 
 elif (tipoAlgoritimo == 3):
     caminho_menor = busca_por_largura(grafo, verticesGrafo)
