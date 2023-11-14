@@ -6,6 +6,7 @@ from buscaLagura import busca_por_largura
 from buscaProfundidade import busca_por_profundidade
 from arvoreGeradoraMinima import arvore_geradora_minima
 from hamiltoniano import grafo_hamiltoniano
+from algoritimosGulosos import busca_gulosa_kruskal
 import os
 from time import sleep
 
@@ -112,3 +113,13 @@ elif (tipoAlgoritimo == 4):
 
     prim = arvore_geradora_minima(grafo, verticesGrafo)
     print("Árvore Geradora Mínima (Prim):", prim)
+
+elif (tipoAlgoritimo == 5):
+    adicionar_pesos_aleatorios(grafo)
+
+    kruskal = busca_gulosa_kruskal(grafo)
+    print("Busca Gulosa - Kruskal")
+    print(" ")
+    print("Árvore Mínima de Abrangência:")
+    for aresta in kruskal:
+        print(aresta)
