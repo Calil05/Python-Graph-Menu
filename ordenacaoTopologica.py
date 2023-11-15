@@ -52,11 +52,11 @@ def ordenacao_topologica(grafo, pre_determinado):
     exibir_grafo(grafo)
     print(" ")
 
-    visitados = set()
-    pilha = []
+    visitados = set()   # Conjunto que armazenará os vértices visitados
+    pilha = []  # Pilha para armazenar a ordenação topológica
 
-    for vertice in grafo:
-        if vertice not in visitados:
+    for vertice in grafo:   # Percorre todos os vértices do grafo
+        if vertice not in visitados:    # Realiza a busca em profundidade para os vértices não visitados
             stack = [(vertice, iter(grafo[vertice]))]
 
             while stack:
@@ -72,8 +72,9 @@ def ordenacao_topologica(grafo, pre_determinado):
                     visitados.add(vizinho)
                     stack.append((vizinho, iter(grafo[vizinho])))
 
-    if len(pilha) != len(grafo):
+    if len(pilha) != len(grafo):    # Verifica se a ordenação topológica foi bem-sucedida (grafo sem ciclos)
         print("Não é possível encontrar uma ordenação topológica. O grafo contém um ciclo.")
         return None
 
+    # Retorna a ordenação topológica encontrada, invertendo a ordem da pilha
     return pilha[::-1]
