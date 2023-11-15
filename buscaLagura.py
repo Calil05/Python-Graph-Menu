@@ -52,16 +52,16 @@ def busca_por_largura(grafo, lista_vertices):
     sequencia = ([(inicial, [inicial])])  # Fila utilizada para rastrear os vértices e caminhos.
 
     while sequencia:    # Laço de repetição
-        vertice, caminho = sequencia.pop(0) # Retiramos o primeiro vertice da fila
+        vertice, caminho = sequencia.pop(0) # Retira o primeiro vertice da fila
 
-        if vertice == final:    # Verificando se o vertice é igual o final do caminho
+        if vertice == final:    # Verifica se o vertice é igual o final do caminho
             return caminho  
 
-        visitado.add(vertice)   # Marcamos o vizinho como visitado
+        visitado.add(vertice)   # Marca o vizinho como visitado
 
         for vizinho in grafo.get(vertice, []):
             if vizinho not in visitado:     # Verificação se o vizinho já foi visitado
                 novo_caminho = caminho + [vizinho]  # Adicionamos o vizinho a um novo caminho
-                sequencia.append((vizinho, novo_caminho))   # Adicionamos o vizinho e o novo caminho a fila
+                sequencia.append((vizinho, novo_caminho))   # Adiciona o vizinho e o novo caminho a fila
 
     return None
