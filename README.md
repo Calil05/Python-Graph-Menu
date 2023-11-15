@@ -1,6 +1,6 @@
 # Python Graph Menu
-<hr>
-Atividade de Algoritimos Avançados.
+
+### Atividade de Algoritimos Avançados.
 
 Aluno: Gabriel Baptista Calil
 
@@ -23,5 +23,5 @@ Python
 
 ### Rodando o Projeto
 
-1º Clonar o projeto do repositório
+1º Clonar o projeto do repositório<br>
 2º Executar o arquivo "main.py"
