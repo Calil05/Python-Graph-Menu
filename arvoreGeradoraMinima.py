@@ -11,9 +11,9 @@ def arvore_geradora_minima(grafo, lista_vertices):
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print(" ")
     print("Esse algoritmo utiliza dos conceitos do algoritmo de Prim em")
-    print("Arvores Gerados Minimas de um grado, para isso será necessario")
+    print("Arvores Gerados Minimas de um grafo, para isso será necessario")
     print("adicionar pesos para as aréstas do grafo. Adicionaremos pesos")
-    print("Aleatórios para cada aresta do seu grafo.")
+    print("aleatórios para cada aresta do seu grafo.")
     print("")
     input("Prescione ENTER para continuar")
     os.system('cls') or ('clear') or None

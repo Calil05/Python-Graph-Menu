@@ -18,7 +18,7 @@ def grafo_hamiltoniano(grafo, lista_vertices):
     print("-=- Grafos Hamiltonianos -=-")
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print(" ")
-    print("Esse algoritimo utiliza dos conceitos de Grafos Hamiltonianos")
+    print("Esse algoritmo utiliza dos conceitos de Grafos Hamiltonianos")
     print("pra encontrar o caminho Hamiltoniano a partir de determinado")
     print("vértice de um grafo.")
     print("")

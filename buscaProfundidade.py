@@ -4,13 +4,13 @@ from time import sleep
 
 def busca_por_profundidade(grafo, lista_vertices):
 
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-    print("-=- Algoritimo de Busca por Profundidade -=-")
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+    print("-=- Algoritmo de Busca por Profundidade -=-")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
     print(" ")
-    print("Esse algoritimo realiza a busca por profundidade no ")
+    print("Esse algoritmo realiza a busca por profundidade no")
     print("grafo a partir do vértice selecionado pelo usuario")
-    print("e imprive o resultado.")
+    print("e imprime o resultado.")
     print("")
     input("Prescione ENTER para continuar")
     os.system('cls') or ('clear') or None

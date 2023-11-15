@@ -13,8 +13,17 @@ from time import sleep
 
 listaVertices = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
+
+print("--=--=--=--=--=--=--=--=--=--=--")
+print(" -(=)- Python Graph Menu -(=)- ")
+print("--=--=--=--=--=--=--=--=--=--=--")
+print()
+print("Desenvolvido por: Gabriel Calil")
+input("Prescione ENTER para continuar")
+os.system('cls') or ('clear') or None
+
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-print(" --=-- Algortimos Avançados --=-- ")
+print(" --=-- Algoritmos Avançados --=-- ")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print(" ")
 print("Como deseja seu grafo?")

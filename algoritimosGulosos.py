@@ -10,13 +10,13 @@ def encontra_componente(componentes, vertice):
 
 def busca_gulosa_kruskal(grafo):
 
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    print("     -=- Algoritimos Gulosos -=-     ")
-    print("    -=- Algoritimo de Kruskal -=-    ")
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    print("     -=- Algoritmos Gulosos -=-     ")
+    print("    -=- Algoritmo de Kruskal -=-    ")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print(" ")
-    print("Esse algoritmo utiliza dos conceitos do algoritimos gulosos em grafos")
-    print("utilizando do algoritimo de Kruskal, para realizar uma Árvore Minima de") 
+    print("Esse algoritmo utiliza dos conceitos do algoritmos gulosos em grafos")
+    print("utilizando do algoritmo de Kruskal, para realizar uma Árvore Minima de") 
     print("Abrangencia, para isso será necessario adicionar pesos para as aréstas")
     print("do grafo. Adicionaremos pesos Aleatórios para cada aresta do seu grafo.")
     print("")

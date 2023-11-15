@@ -4,12 +4,12 @@ from time import sleep
 
 def busca_por_largura(grafo, lista_vertices):
 
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    print("-=- Algoritimo de Busca por Largura -=-")
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    print("-=- Algoritmo de Busca por Largura -=-")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print(" ")
-    print("Esse algoritimo utiliza dos conceitos de busca por largura")
-    print("pra encontrar o caminho mais curto entre dois veértices de")
+    print("Esse algoritmo utiliza dos conceitos de busca por largura")
+    print("pra encontrar o caminho mais curto entre dois vértices de")
     print("um grafo.")
     print("")
     input("Prescione ENTER para continuar")
@@ -20,6 +20,7 @@ def busca_por_largura(grafo, lista_vertices):
 
     while True:
         inicial = input("Escolha o vértice inicial: ")
+        inicial = inicial.upper()
 
         if inicial not in lista_vertices:
             print("O vértice não está no grafo")
@@ -29,12 +30,12 @@ def busca_por_largura(grafo, lista_vertices):
             print(" ")
             inicial = input("Escolha o vértice inicial: ")
         else:
-            # os.system('cls') or ('clear') or None
             print(" ")
             break
 
     while True:
         final = input("Escolha o vértice final: ")
+        final = final.upper()
 
         if final not in lista_vertices:
             print("O vértice não está no grafo")
