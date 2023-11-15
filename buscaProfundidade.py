@@ -36,15 +36,15 @@ def busca_por_profundidade(grafo, lista_vertices):
             print(" ")
             break
         
-    visitados = set()
+    visitados = set() # Lista para armazenar os vértices visitados durante a busca
 
     def busca(vertice):
         nonlocal visitados
-        visitados.add(vertice)
-        print(vertice, end=' ')
+        visitados.add(vertice)     # Adiciona o vértice a lista de visitados
+        print(vertice, end=' ')         # E o imprime na tela
 
-        for vizinho in grafo[vertice]:
-            if vizinho not in visitados:
+        for vizinho in grafo[vertice]:   # Percorre os vizinhos do vértice 
+            if vizinho not in visitados:    # Realiza a busca em profundidade para os vizinhos não visitados
                 busca(vizinho)
 
     print("Busca em Profundidade a partir do vértice '{}': ".format(vertice_inicial))
