@@ -7,6 +7,7 @@ from buscaProfundidade import busca_por_profundidade
 from arvoreGeradoraMinima import arvore_geradora_minima
 from hamiltoniano import grafo_hamiltoniano
 from algoritimosGulosos import busca_gulosa_kruskal
+from ordenacaoTopologica import ordenacao_topologica
 import os
 from time import sleep
 
@@ -123,3 +124,14 @@ elif (tipoAlgoritimo == 5):
     print("Árvore Mínima de Abrangência:")
     for aresta in kruskal:
         print(aresta)
+
+elif (tipoAlgoritimo == 6):
+    if (tipoGrafo == 1):
+        pre_determinado = True
+    else:
+        pre_determinado = False
+
+    topologica = ordenacao_topologica(grafo, pre_determinado)
+    if (topologica) is not None:
+        print("Ordenação Topológica:")
+        print(topologica)
