@@ -1,7 +1,7 @@
 from exibeGrafo import exibir_grafo
 import os
 
-def grafo_pre_determinado():
+def grafo_pre_determinado():    # Função para utilizar um grafo pré determinado
         
     grafo = {
         'A': ['B', 'C'],

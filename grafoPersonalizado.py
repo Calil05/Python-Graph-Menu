@@ -2,7 +2,7 @@ from exibeGrafo import exibir_grafo
 import os
 from time import sleep
 
-def grafo_personalizado(lista_de_caracteres):
+def grafo_personalizado(lista_de_caracteres):   # Função para criar um grafo personalizado
     grafo = {}
  
     verticesGrafo = []
