@@ -1,6 +1,7 @@
 from grafoPreDeterminado import grafo_pre_determinado
 from grafoPersonalizado import grafo_personalizado
 from exibeGrafo import exibir_grafo
+from limpaTela import limpaTela
 from adicionaPeso import adicionar_pesos_aleatorios
 from buscaLagura import busca_por_largura
 from buscaProfundidade import busca_por_profundidade
@@ -13,14 +14,13 @@ from time import sleep
 
 listaVertices = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-
 print("--=--=--=--=--=--=--=--=--=--=--")
 print(" -(=)- Python Graph Menu -(=)- ")
 print("--=--=--=--=--=--=--=--=--=--=--")
 print()
 print("Desenvolvido por: Gabriel Calil")
 input("Prescione ENTER para continuar")
-os.system('cls') or ('clear') or None
+limpaTela()
 
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print(" --=-- Algoritmos Avançados --=-- ")
@@ -36,7 +36,7 @@ while True:
     if(tipoGrafo < 1 or tipoGrafo > 2):
         print("Numero invalido!")
         sleep(1)
-        os.system('cls') or ('clear') or None
+        limpaTela()
         print("Como deseja seu grafo?")
         print("=-=-=-=-=-=-=-=-=-=-=-")
         print(" 1 - Pré Determinado")
@@ -46,7 +46,7 @@ while True:
         break
 
 if (tipoGrafo == 1):
-    os.system('cls') or ('clear') or None
+    limpaTela()
     grafo = grafo_pre_determinado()
 
     inicio = 'A'
@@ -55,7 +55,7 @@ if (tipoGrafo == 1):
 
     print(" ")
 elif (tipoGrafo == 2):
-    os.system('cls') or ('clear') or None
+    limpaTela()
     grafo, verticesGrafo = grafo_personalizado(listaVertices)
 
     inicio = verticesGrafo[0]
@@ -79,7 +79,7 @@ while True:
     if(tipoAlgoritimo < 1 or tipoAlgoritimo > 6):
         print("Numero invalido!")
         sleep(1)
-        os.system('cls') or ('clear') or None
+        limpaTela()
         print("Selecione seu algoritimo:")
         print("=-=-=-=-=-=-=-=-=-=-=-=-=")
         print(" ")
@@ -92,7 +92,7 @@ while True:
         print(" ")
         tipoAlgoritimo = int(input())
     else:
-        os.system('cls') or ('clear') or None
+        limpaTela()
         break
 
 if (tipoAlgoritimo == 1):
