@@ -1,0 +1,1 @@
+[{"nome": "Grafo Exemplo", "grafo": {"A": ["C", "B"], "B": ["A"], "C": ["A"]}}, {"nome": "Grafo Exemplo22", "grafo": {"A": ["B", "C"], "B": ["A"], "C": ["A"]}}, {"nome": "Grafo Exemplo54", "grafo": {"A": ["B", "C"], "B": ["A", "C"], "C": ["A", "B"]}}]
