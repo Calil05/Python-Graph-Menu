@@ -155,14 +155,13 @@ if (tipoAlgoritimo == 1):
     busca_por_profundidade(grafo, verticesGrafo)
 
 elif (tipoAlgoritimo == 2):
-    caminho_hamiltoniano = grafo_hamiltoniano(grafo, verticesGrafo)
+
+    caminho_hamiltoniano = grafo_hamiltoniano(grafo)
+
     if caminho_hamiltoniano:
-        exibir_grafo(grafo)
-        print(" ")
-        print("Caminho Hamiltoniano:", caminho_hamiltoniano)
-        print(" ")
+        print("Existe um caminho hamiltoniano no grafo.")
     else:
-        print("Nenhum caminho Hamiltoniano encontrado.")
+        print("Não existe um caminho hamiltoniano no grafo.")
 
 elif (tipoAlgoritimo == 3):
     caminho_menor = busca_por_largura(grafo, verticesGrafo)
