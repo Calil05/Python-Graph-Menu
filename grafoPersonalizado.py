@@ -1,3 +1,4 @@
+from limpaTela import limpaTela
 from exibeGrafo import exibir_grafo
 import os
 from time import sleep
@@ -18,13 +19,13 @@ def grafo_personalizado(lista_de_caracteres):   # Função para criar um grafo p
         if(escolha > 26 or escolha < 1):
             print("Numero invalido!")
             sleep(1)
-            os.system('cls') or ('clear') or None
+            limpaTela()
             print("Quantos vértices? (1 a 26)")
             escolha = int(input())
         else:
             break
 
-    os.system('cls') or ('clear') or None
+    limpaTela()
 
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print(" -=- Criação de Grafo -=-")
@@ -49,7 +50,7 @@ def grafo_personalizado(lista_de_caracteres):   # Função para criar um grafo p
             print(f"Escolha um vértice para adicionar uma conexão para '{caracter}' (ou digite -1 para parar): ")
             escolha = input()
             if escolha == '-1':
-                os.system('cls') or ('clear') or None
+                limpaTela()
                 break
             if escolha not in verticesGrafo or escolha == caracter:
                 print("Vértice inválido. Escolha outro vértice.")
@@ -60,7 +61,7 @@ def grafo_personalizado(lista_de_caracteres):   # Função para criar um grafo p
                 else:
                     print(f"A conexão entre '{caracter}' e '{escolha}' já existe.")
 
-    os.system('cls') or ('clear') or None
+    limpaTela()
     exibir_grafo(grafo)
 
     return grafo, verticesGrafo

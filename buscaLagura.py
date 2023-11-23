@@ -1,3 +1,4 @@
+from limpaTela import limpaTela
 from exibeGrafo import exibir_grafo
 import os
 from time import sleep
@@ -13,7 +14,7 @@ def busca_por_largura(grafo, lista_vertices):
     print("um grafo.")
     print("")
     input("Prescione ENTER para continuar")
-    os.system('cls') or ('clear') or None
+    limpaTela()
 
     exibir_grafo(grafo)
     print(" ")
@@ -25,7 +26,7 @@ def busca_por_largura(grafo, lista_vertices):
         if inicial not in lista_vertices:
             print("O vértice não está no grafo")
             sleep(1)
-            os.system('cls') or ('clear') or None
+            limpaTela()
             exibir_grafo(grafo)
             print(" ")
             inicial = input("Escolha o vértice inicial: ")
@@ -40,12 +41,12 @@ def busca_por_largura(grafo, lista_vertices):
         if final not in lista_vertices:
             print("O vértice não está no grafo")
             sleep(1)
-            os.system('cls') or ('clear') or None
+            limpaTela()
             exibir_grafo(grafo)
             print(" ")
             final = input("Escolha o vértice final: ")
         else:
-            os.system('cls') or ('clear') or None
+            limpaTela()
             break
 
     visitado = set()

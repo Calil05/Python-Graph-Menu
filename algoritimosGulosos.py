@@ -1,3 +1,4 @@
+from limpaTela import limpaTela
 from adicionaPeso import adicionar_pesos_aleatorios
 from exibeGrafo import exibir_grafo_com_pesos
 import os
@@ -21,7 +22,7 @@ def busca_gulosa_kruskal(grafo):
     print("do grafo. Adicionaremos pesos Aleatórios para cada aresta do seu grafo.")
     print("")
     input("Prescione ENTER para continuar")
-    os.system('cls') or ('clear') or None
+    limpaTela()
 
     exibir_grafo_com_pesos(grafo)
     print(" ")

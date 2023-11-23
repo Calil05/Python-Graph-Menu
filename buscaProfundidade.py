@@ -1,3 +1,4 @@
+from limpaTela import limpaTela
 from exibeGrafo import exibir_grafo
 import os
 from time import sleep
@@ -13,7 +14,7 @@ def busca_por_profundidade(grafo, lista_vertices):
     print("e imprime o resultado.")
     print("")
     input("Prescione ENTER para continuar")
-    os.system('cls') or ('clear') or None
+    limpaTela()
 
     exibir_grafo(grafo)
     print(" ")
@@ -23,16 +24,16 @@ def busca_por_profundidade(grafo, lista_vertices):
         vertice_inicial = vertice_inicial.upper()
 
         if vertice_inicial not in lista_vertices:
-            os.system('cls') or ('clear') or None
+            limpaTela()
             print("O vértice não está no grafo")
             sleep(1)
-            os.system('cls') or ('clear') or None
+            limpaTela()
             exibir_grafo(grafo)
             print(" ")
             vertice_inicial = input("Realizar busca por profundidade a partir de qual vértice? ")
             vertice_inicial = vertice_inicial.upper()
         else:
-            os.system('cls') or ('clear') or None
+            limpaTela()
             print(" ")
             break
         

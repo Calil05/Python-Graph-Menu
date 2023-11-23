@@ -1,6 +1,8 @@
 from grafoPreDeterminado import grafo_pre_determinado
 from grafoPersonalizado import grafo_personalizado
-from exibeGrafo import exibir_grafo
+from exibeGrafo import exibir_grafo, exibir_grafo_com_pesos
+from limpaTela import limpaTela
+from jsonActions import salvar_grafo, carregar_grafo
 from adicionaPeso import adicionar_pesos_aleatorios
 from buscaLagura import busca_por_largura
 from buscaProfundidade import busca_por_profundidade
@@ -12,7 +14,7 @@ import os
 from time import sleep
 
 listaVertices = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-
+arquivo = '_database.json'
 
 print("--=--=--=--=--=--=--=--=--=--=--")
 print(" -(=)- Python Graph Menu -(=)- ")
@@ -20,7 +22,7 @@ print("--=--=--=--=--=--=--=--=--=--=--")
 print()
 print("Desenvolvido por: Gabriel Calil")
 input("Prescione ENTER para continuar")
-os.system('cls') or ('clear') or None
+limpaTela()
 
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print(" --=-- Algoritmos Avançados --=-- ")
@@ -30,23 +32,25 @@ print("Como deseja seu grafo?")
 print("=-=-=-=-=-=-=-=-=-=-=-")
 print(" 1 - Pré Determinado")
 print(" 2 - Faça você mesmo")
+print(" 3 - Carregar Grafo Salvo")
 tipoGrafo = int(input())
 
 while True:
-    if(tipoGrafo < 1 or tipoGrafo > 2):
+    if(tipoGrafo < 1 or tipoGrafo > 3):
         print("Numero invalido!")
         sleep(1)
-        os.system('cls') or ('clear') or None
+        limpaTela()
         print("Como deseja seu grafo?")
         print("=-=-=-=-=-=-=-=-=-=-=-")
         print(" 1 - Pré Determinado")
         print(" 2 - Faça você mesmo")
+        print(" 3 - Carregar Grafo Salvo")
         tipoGrafo = int(input())
     else:
         break
 
 if (tipoGrafo == 1):
-    os.system('cls') or ('clear') or None
+    limpaTela()
     grafo = grafo_pre_determinado()
 
     inicio = 'A'
@@ -55,11 +59,63 @@ if (tipoGrafo == 1):
 
     print(" ")
 elif (tipoGrafo == 2):
-    os.system('cls') or ('clear') or None
+    limpaTela()
     grafo, verticesGrafo = grafo_personalizado(listaVertices)
 
     inicio = verticesGrafo[0]
     final = verticesGrafo[-1]
+
+    limpaTela()
+    print(" ")
+
+    while True:
+        exibir_grafo(grafo)
+        esolha_salvar = input("Deseja salvar seu grafo? [S/N] ")
+
+        if (esolha_salvar.upper() != 'S' and esolha_salvar.upper() != 'N'):
+            print("Escolha Invalida!")
+            sleep(1)
+            limpaTela()
+        elif (esolha_salvar.upper() == 'S'):
+            possui_pesos = False
+
+            nome_grafo = input("Escolha um nome para seu grafo: ")
+
+            salvar_grafo(nome_grafo, grafo, possui_pesos, arquivo)
+            sleep(1)
+            print("Grafo salvo com sucesso!")
+            sleep(1)
+            limpaTela()
+            break
+        elif (esolha_salvar.upper() == 'N'):
+            limpaTela()
+            break
+
+elif (tipoGrafo == 3):
+    limpaTela()
+    possui_pesos = False
+
+    while True:
+        print("Carregar Grafo")
+        print(" ")
+        nome_grafo = input("Nome do grafo a ser carregado: ")
+
+        grafo, verticesGrafo = carregar_grafo(arquivo, nome_grafo)
+
+        if (grafo is not None):
+            grafo_selecionado, pesos_selecionados = grafo, possui_pesos
+            if pesos_selecionados:
+                limpaTela()
+                exibir_grafo_com_pesos(grafo_selecionado)
+                break
+            else:
+                limpaTela()
+                exibir_grafo(grafo_selecionado)
+                break
+        else:
+            print(f"Grafo com o nome '{nome_grafo}' não encontrado.")
+            sleep(1)
+            limpaTela()
 
     print(" ")
 
@@ -79,7 +135,7 @@ while True:
     if(tipoAlgoritimo < 1 or tipoAlgoritimo > 6):
         print("Numero invalido!")
         sleep(1)
-        os.system('cls') or ('clear') or None
+        limpaTela()
         print("Selecione seu algoritimo:")
         print("=-=-=-=-=-=-=-=-=-=-=-=-=")
         print(" ")
@@ -92,21 +148,20 @@ while True:
         print(" ")
         tipoAlgoritimo = int(input())
     else:
-        os.system('cls') or ('clear') or None
+        limpaTela()
         break
 
 if (tipoAlgoritimo == 1):
     busca_por_profundidade(grafo, verticesGrafo)
 
 elif (tipoAlgoritimo == 2):
-    caminho_hamiltoniano = grafo_hamiltoniano(grafo, verticesGrafo)
+
+    caminho_hamiltoniano = grafo_hamiltoniano(grafo)
+
     if caminho_hamiltoniano:
-        exibir_grafo(grafo)
-        print(" ")
-        print("Caminho Hamiltoniano:", caminho_hamiltoniano)
-        print(" ")
+        print("Existe um caminho hamiltoniano no grafo.")
     else:
-        print("Nenhum caminho Hamiltoniano encontrado.")
+        print("Não existe um caminho hamiltoniano no grafo.")
 
 elif (tipoAlgoritimo == 3):
     caminho_menor = busca_por_largura(grafo, verticesGrafo)

@@ -1,3 +1,4 @@
+from limpaTela import limpaTela
 from exibeGrafo import exibir_grafo
 import os
 from time import sleep
@@ -21,7 +22,7 @@ def ordenacao_topologica(grafo, pre_determinado):
     print("pra armazenar a ordem topológica dos vértices de um grafo.")
     print("")
     input("Prescione ENTER para continuar")
-    os.system('cls') or ('clear') or None
+    limpaTela()
 
     if (pre_determinado == True):
 
@@ -39,7 +40,7 @@ def ordenacao_topologica(grafo, pre_determinado):
             if (escolha != 'S' and escolha != 'N'):
                 print(" ")
                 print("Escolha Invalida!")
-                os.system('cls') or ('clear') or None
+                limpaTela()
                 sleep(1)
             else:
                 if (escolha == 'S'):
@@ -48,7 +49,7 @@ def ordenacao_topologica(grafo, pre_determinado):
                 else:
                     break
 
-    os.system('cls') or ('clear') or None                  
+    limpaTela()                  
     exibir_grafo(grafo)
     print(" ")
 
